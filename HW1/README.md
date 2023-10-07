@@ -1,4 +1,4 @@
-# nccucsds2023
+# nccucsds2023 HW1
 ## 第一部份 UDP 
 
 請依據課程投影片中的範例，寫作符合下列要求的「UDP Client與Server」，其中，Server 請以Node.js寫作，Client請以Python寫作。
