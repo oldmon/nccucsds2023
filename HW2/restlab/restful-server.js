@@ -21,8 +21,7 @@ server.get('/hogRider', function (req, res) {
 });
 
 server.get('/hogRider/:name', function (req, res) {
-    let result = hogRiders.find(element => element.name === req.params.name);
-    return 
+    // 請依Lab說明寫作
 });
 
 server.post('/hogRider', function (req, res) {
