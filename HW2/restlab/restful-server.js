@@ -21,7 +21,15 @@ server.get('/hogRider', function (req, res) {
 });
 
 server.get('/hogRider/:name', function (req, res) {
-    // 請依Lab說明寫作
+    const name = req.params.name;
+    const result = hogRiders.find(element => element.name === name);
+    if (result) {
+        res.send(result);
+    } else {
+        res.send({
+            error: 'not found',
+        });
+    }
 });
 
 server.post('/hogRider', function (req, res) {
@@ -31,6 +39,5 @@ server.post('/hogRider', function (req, res) {
 server.put('/hogRider/:name', function (req, res) {
     // 請依Lab說明寫作
 });
-
 
 server.listen(3000, "127.0.0.1");
