@@ -22,21 +22,22 @@ server.get('/hogRider', function (req, res) {
 
 server.get('/hogRider/:name', function (req, res) {
     let result = hogRiders.find(element => element.name === req.params.name);
-    if (result) {
+    if (result)
         res.send(result);
-    } else {
-        res.send({
-            error: 'not found',
-        });
-    }
+    else 
+        return{error: 'not found',};
 });
 
 server.post('/hogRider', function (req, res) {
-    // 請依Lab說明寫作
+    let newRider=req.body;
+    hogRiders.push(newRider);
+    return {count: hogRiders.length};
 });
 
 server.put('/hogRider/:name', function (req, res) {
-    // 請依Lab說明寫作
+    let index = hogRiders.findIndex(element => element.name === req.params.name);
+    hogRiders[index] =req.body;
+    return hogRiders[index];
 });
 
 server.listen(3000, "127.0.0.1");
