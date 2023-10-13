@@ -21,8 +21,7 @@ server.get('/hogRider', function (req, res) {
 });
 
 server.get('/hogRider/:name', function (req, res) {
-    const name = req.params.name;
-    const result = hogRiders.find(element => element.name === name);
+    let result = hogRiders.find(element => element.name === req.params.name);
     if (result) {
         res.send(result);
     } else {
