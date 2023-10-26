@@ -21,8 +21,10 @@ function main() {
         console.log('Greeting Response:', response.message);
     });
 
-    // step 5-(2): client.add({x: 3, y: 2}, function (err, response) {...
-	//                                      });
+    // step 5-(2):
+    client.add({x: 3, y: 2}, function (err, response) {
+        console.log('Add Response:', response.result);
+	});
 	// note that you should use response.result to get the outcome
 }
 

@@ -7,8 +7,7 @@ service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply) {}
   // step 5: write a definition for Add here
-  // ex: 
-  // rpc Add (AddRequest)... (AddReply)
+  rpc Add (AddRequest) returns (AddReply){}
 }
 
 // The request message containing the user's name.
@@ -22,3 +21,11 @@ message HelloReply {
 }
 
 // step 5-(3) and 5-(4): message AddRequest and message AddReply
+message AddRequest {
+  int32 x = 1;
+  int32 y = 2;
+}
+
+message AddReply {
+  int32 result = 1;
+}
